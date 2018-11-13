@@ -1,0 +1,40 @@
+/*
+Theme Name: RE Investment League
+Description: Custom theme for RE Investment league, built on Enfold
+Version: 1.0
+Author: Ventura Web Design
+Author URI: https://www.venturawebdesign.com/
+Template: enfold
+*/
+/* ---------- Updated 11-13-2018 ---------- */
+/* ---------- Sitewide Typography ---------- */
+.template-page .entry-content-wrapper h1, .template-page .entry-content-wrapper h2 { text-transform: none; letter-spacing: normal; }
+
+.avia_textblock p { max-width: 65ch; position: relative; margin-left: auto; margin-right: auto; }
+
+/* ---------- Preloader ---------- */
+#top .av-siteloader { opacity: 0.75; }
+#top .av-siteloader-wrap { background-color: #041723; }
+
+.av-preloading-logo { max-width: 75px !important; height: auto; }
+
+/* ---------- Buttons ---------- */
+.avia-button { -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+.avia-button:hover { opacity: 1; -webkit-filter: saturate(2); filter: saturate(2); }
+.avia-button.avia-size-large { font-size: 18px; padding: 15px 30px; font-weight: bold; text-transform: uppercase; }
+
+/* ---------- Header ---------- */
+.logo img { height: 50px; width: auto; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+
+/* ---------- Footer Socket ---------- */
+#socket { font-size: 14px; }
+#socket .container { padding-top: 30px; padding-bottom: 30px; }
+#socket .copyright { float: right; line-height: 1; padding: 5px 0; display: block; }
+#socket .sub_menu_socket { float: left; }
+#socket .menu { margin: 0; }
+#socket .menu .menu-item { padding: 0; line-height: 1; }
+#socket .menu a { text-transform: uppercase; color: #D8DBE2; letter-spacing: 2px; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; display: block; padding: 5px 10px; }
+#socket .menu a:hover { color: #0068C6; text-decoration: none; }
+
+@media screen and (max-width: 767px) { /* ---------- Header ---------- */
+  .responsive .logo img { height: 40px !important; width: auto; top: 0; -webkit-transform: none; transform: none; } }
