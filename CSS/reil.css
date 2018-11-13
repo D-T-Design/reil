@@ -26,6 +26,23 @@ Template: enfold
 /* ---------- Header ---------- */
 .logo img { height: 50px; width: auto; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
+#top #header_main > .container .main_menu .av-main-nav > li > a { font-size: 14px; text-transform: uppercase; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#top #header_main > .container .main_menu .av-main-nav > li > a:hover { color: #0068C6; }
+
+/* ---------- Projects Slider ---------- */
+#top .avia-content-slider { overflow: visible; }
+#top .avia-content-slider .av_one_third { width: 31%; margin-left: 3.5%; }
+#top .avia-content-slider .av_one_third.first { margin-left: 0; }
+#top .avia-content-slider .slide-entry { border: 1px solid #D8DBE2; -webkit-box-shadow: 0px 6px 12px #D8DBE2; box-shadow: 0px 6px 12px #D8DBE2; }
+#top .avia-content-slider .slide-image { margin-bottom: 0; border-radius: 0; }
+#top .avia-content-slider .slide-image img { border-radius: 0; }
+#top .avia-content-slider .slide-content { padding: 20px 10px; }
+#top .avia-content-slider .slide-entry-title { text-align: center; padding: 0; line-height: 1; color: #0068C6; margin-bottom: 5px; font-size: 20px; text-transform: none; letter-spacing: normal; }
+#top .avia-content-slider .blog-categories { text-align: center !important; color: #494D51; position: static !important; font-size: 14px !important; line-height: 1; }
+#top .avia-content-slider .blog-categories a { color: #494D51; text-transform: none; }
+#top .avia-content-slider .blog-categories a:hover { text-decoration: none; }
+#top .avia-content-slider-inner { overflow: visible; }
+
 /* ---------- Footer Socket ---------- */
 #socket { font-size: 14px; }
 #socket .container { padding-top: 30px; padding-bottom: 30px; }

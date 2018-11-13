@@ -9,6 +9,11 @@ Template: enfold
 
 /* ---------- Updated 11-13-2018 ---------- */
 
+$cta-blue: #0068C6;
+$dark-blue: #041723;
+$light-gray: #D8DBE2;
+$dark-gray: #494D51;
+
 /* ---------- Sitewide Typography ---------- */
 
 .template-page {
@@ -35,7 +40,7 @@ Template: enfold
 		opacity: 0.75;
 	}
 	.av-siteloader-wrap {
-		background-color: #041723;
+		background-color: $dark-blue;
 	}
 }
 
@@ -69,6 +74,73 @@ Template: enfold
 		transform: translateY(-50%);
 	}
 }
+#top #header_main > .container {
+	.main_menu {
+		.av-main-nav > li > a {
+			font-size: 14px;
+			text-transform: uppercase;
+			transition: all 0.05s ease-in-out;
+			&:hover {
+				color: $cta-blue;
+			}
+		}
+	}
+}
+/* ---------- Projects Slider ---------- */
+
+#top {
+	.avia-content-slider {
+		overflow: visible;
+		.av_one_third {
+			width: 31%;
+			margin-left: 3.5%;
+			&.first {
+				margin-left: 0;
+			}
+		}
+		.slide-entry {
+			border: 1px solid $light-gray;
+			box-shadow: 0px 6px 12px $light-gray;
+		}
+		.slide-image {
+			margin-bottom: 0;
+			border-radius: 0;
+			img {
+				border-radius: 0;
+			}
+		}
+		.slide-content {
+			padding: 20px 10px;		
+		}
+		.slide-entry-title {
+			text-align: center;
+			padding: 0;
+			line-height: 1;
+			color: $cta-blue;
+			margin-bottom: 5px;
+			font-size: 20px;
+			text-transform: none;
+			letter-spacing: normal;
+		}
+		.blog-categories {
+			text-align: center !important;
+			color: $dark-gray;
+			position: static !important;
+			font-size: 14px !important;
+			line-height: 1;
+			a {
+				color: $dark-gray;
+				text-transform: none;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.avia-content-slider-inner {
+		overflow: visible;
+	}
+}
 
 /* ---------- Footer Socket ---------- */
 #socket {
@@ -94,13 +166,13 @@ Template: enfold
 		}
 		a {
 			text-transform: uppercase;
-			color: #D8DBE2;
+			color: $light-gray;
 			letter-spacing: 2px;
 			transition: all 0.05s ease-in-out;
 			display: block;
 			padding: 5px 10px;
 			&:hover {
-				color: #0068C6;
+				color: $cta-blue;
 				text-decoration: none;
 			}
 		}
