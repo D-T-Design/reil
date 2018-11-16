@@ -7,15 +7,47 @@ Author URI: https://www.venturawebdesign.com/
 Template: enfold
 */
 
-/* ---------- Updated 11-13-2018 ---------- */
+/* ---------- Updated 11-15-2018 ---------- */
 
 $cta-blue: #0068C6;
 $dark-blue: #041723;
 $light-gray: #D8DBE2;
 $dark-gray: #494D51;
+$white: #FFFFFF;
+@mixin transition {
+	transition: all 0.05s ease-in-out;
+}
+@mixin font-family {
+	font-family: 'freight-sans-pro', Helvetica, Arial, sans-serif;
+}
+@mixin box-shadow($x, $y, $z, $color, $alpha, $inset: false) {
+	@if $inset {
+		box-shadow: inset $x $y $z rgba($color, $alpha);
+	} @else {
+		box-shadow: $x $y $z rgba($color, $alpha);
+	}
+}
+@mixin gradient-bg($flatcolor, $startcolor, $endcolor, $direction) {
+	background: $flatcolor;
+	@if $direction == 'vertical' {
+		background: -webkit-linear-gradient(top, $startcolor, $endcolor);
+		background: linear-gradient(to bottom, $startcolor, $endcolor);
+	} @if $direction == 'horizontal' {
+		background: -webkit-linear-gradient(left, $startcolor, $endcolor);
+		background: linear-gradient(to right, $startcolor, $endcolor);
+	} @if $direction == 'up-right' {
+		background: -webkit-linear-gradient(45deg, $startcolor, $endcolor);
+		background: linear-gradient(45deg, $startcolor, $endcolor);
+	} @if $direction == 'down-right' {
+		background: -webkit-linear-gradient(-45deg, $startcolor, $endcolor);
+		background: linear-gradient(-45deg, $startcolor, $endcolor);
+	} @else {
+		background: -webkit-linear-gradient($direction, $startcolor, $endcolor);
+		background: linear-gradient($direction, $startcolor, $endcolor);
+	}
+}
 
 /* ---------- Sitewide Typography ---------- */
-
 .template-page {
 	.entry-content-wrapper {
 		h1, h2 {
@@ -33,8 +65,11 @@ $dark-gray: #494D51;
 	}
 }
 
-/* ---------- Preloader ---------- */
+.mejs-container * {
+	@include font-family;
+}
 
+/* ---------- Preloader ---------- */
 #top {
 	.av-siteloader {
 		opacity: 0.75;
@@ -50,9 +85,9 @@ $dark-gray: #494D51;
 }
 
 /* ---------- Buttons ---------- */
-
 .avia-button {
-	transition: all 0.05s ease-in-out;
+	@include transition;
+	border-radius: 0 !important;
 	&:hover {
 		opacity: 1;
 		filter: saturate(2);
@@ -65,6 +100,19 @@ $dark-gray: #494D51;
 	}
 }
 
+/* ---------- Input ---------- */
+#top {
+	.avia_ajax_form {
+		.text_input, .button {
+			border-radius: 0;
+			border: 0;
+		}
+	}
+	input[type="text"] {
+		border-radius: 0;
+	}
+}
+
 /* ---------- Header ---------- */
 .logo {
 	img {
@@ -74,20 +122,220 @@ $dark-gray: #494D51;
 		transform: translateY(-50%);
 	}
 }
-#top #header_main > .container {
-	.main_menu {
-		.av-main-nav > li > a {
-			font-size: 14px;
-			text-transform: uppercase;
-			transition: all 0.05s ease-in-out;
-			&:hover {
-				color: $cta-blue;
+#top {
+	#header_main > .container {
+		.main_menu {
+			.av-main-nav > li > a {
+				font-size: 14px;
+				text-transform: uppercase;
+				@include transition;
+				&:hover {
+					color: $cta-blue;
+				}
+			}
+		}
+	}
+	#wrap_all {
+		.header_color {
+			.av-menu-button-colored > a {
+				.avia-menu-text {
+					padding: 9px 18px;
+					border-radius: 0;
+				}
 			}
 		}
 	}
 }
-/* ---------- Projects Slider ---------- */
+#menu-item-search {
+	#searchform {
+		a {
+			&[class*='view_all'] {
+				color: $white;
+				font-size: 16px;
+				background-color: $cta-blue;
+				line-height: 1;
+				@include transition;
+				&:hover {
+					background-color: $cta-blue;
+					filter: saturate(2);
+				}
+			}
+			&.av_ajax_search_entry {
+				&:hover .av_ajax_search_title {
+					color: $cta-blue;
+					filter: saturate(2);
+				}
+			}
+		}
+		.av_ajax_search_title {
+			font-size: 18px;
+			@include transition;
+		}
+		.av_ajax_search_image {
+			border-radius: 0;
+		}
+	}
+}
 
+/* ---------- Popup ---------- */
+.white-popup {
+  position: relative;
+  background: $light-gray;
+  padding: 30px;
+  width: auto;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+.popup-wrapper {
+	background-color: $white;
+	padding: 50px;
+	font-size: 18px;
+	.avia_textblock {
+		h2 {
+			line-height: 1.3;
+		}
+		ul {
+			list-style: disc;
+			margin-bottom: 0;
+			margin-left: 1.5em;
+		}
+	}
+	strong {
+		color: $cta-blue;
+	}
+	.avia_image {
+		width: 246px;
+		max-width: 100%;
+		height: auto;
+	}
+	.popup-last {
+		color: $cta-blue;
+	}
+}
+.popup-cta {
+	padding: 30px 50px;
+	.avia_textblock {
+		p {
+			position: static;
+			width: 100%;
+			max-width: 100%;
+			margin: 0;
+		}
+		h2 {
+			font-size: 2.1em;
+		}
+		.pop-up-cta {
+			display: block;
+			color: $cta-blue;
+		}
+	}
+	& + button.mfp-close {
+		background-color: $dark-gray;
+		color: $white;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		opacity: 1;
+		font-size: 36px;
+		@include transition;
+		&:hover {
+			background-color: $cta-blue;
+		}
+	}
+}
+#top {
+	.popup-cta {
+		.avia_ajax_form, fieldset {
+			margin-bottom: 0;
+		}
+		.avia_ajax_form {
+			.text_input {
+				background-color: $white;
+				opacity: 0.8;
+				&:hover, &:focus {
+					opacity: 1;
+				}
+			}
+			.button {
+				background-color: $cta-blue;
+				border-color: $cta-blue;
+				color: $white;
+				&:hover {
+					background-color: $white;
+					color: $dark-blue;
+				}
+			}
+		}
+	}
+}
+
+/* ---------- Breadcrumb ---------- */
+.title_container {
+	background-color: $dark-gray;
+	@include box-shadow(0px, 5px, 15px, $dark-blue, 0.5, true);
+	@include gradient-bg($dark-blue, $dark-blue, $dark-gray, horizontal);
+	.breadcrumb {
+		font-size: 14px;
+		line-height: 1;
+		color: $white;
+		font-weight: bold;
+		a {
+			@include transition;
+			font-weight: normal;
+			color: $white;
+			&:hover {
+				color: $light-gray;
+				text-decoration: none;
+			}
+		}
+		.trail-before {
+			display: none;
+		}
+	}
+}
+
+/* ---------- CTA Section ---------- */
+#top {
+	.avia_ajax_form {
+		.button {
+			background-color: $dark-blue;
+			color: $light-gray;
+			font-weight: bold;
+			margin: 0;
+			margin-left: 2% !important;
+			border: 1px solid $dark-blue;
+			@include transition;
+			&:hover {
+				border: 1px solid $white;
+				color: $white;
+			}
+		}
+		.text_input {
+			background-color: $light-gray;
+			@include transition;
+			&:hover, &:focus {
+				background-color: $white;
+				color: $dark-gray;
+			}
+		}
+	}
+}
+
+/* ---------- Homepage Specifics ---------- */
+.html_entry_id_431 {
+	#av_section_2 {
+		h2, p {
+			text-align: center;
+			line-height: 1.5;
+		}
+		h2 {
+			line-height: 1.2;
+		}
+	}
+}
+
+
+/* ---------- Projects Slider ---------- */
 #top {
 	.avia-content-slider {
 		overflow: visible;
@@ -168,12 +416,104 @@ $dark-gray: #494D51;
 			text-transform: uppercase;
 			color: $light-gray;
 			letter-spacing: 2px;
-			transition: all 0.05s ease-in-out;
+			@include transition;
 			display: block;
 			padding: 5px 10px;
 			&:hover {
 				color: $cta-blue;
 				text-decoration: none;
+			}
+		}
+	}
+}
+
+/* ---------- Blog Page ---------- */
+#top.blog {
+	.post-title {
+		font-size: 1.5em;
+		color: $cta-blue;
+	}
+}
+.html_modern-blog {
+	#top {
+		.post-entry {
+			.post-title {
+				font-size: 1.5em;
+				color: $cta-blue;
+			}
+		}
+	}
+}
+.small-preview, .small-preview img {
+	border-radius: 0;
+}
+.recentcomments a, .widget_recent_entries li a {
+	@include font-family;
+}
+
+/* ---------- Scroll Top Link ---------- */
+#scroll-top-link {
+	&.avia_pop_class {
+		opacity: 1;
+		background-color: $cta-blue;
+		border: 1px solid $cta-blue;
+		border-radius: 0;
+		@include transition;
+		&:hover {
+			background-color: $white;
+			color: $cta-blue;
+			border-color: $dark-blue;
+		}
+	}
+}
+
+/* ---------- Blockquotes ---------- */
+.main_color {
+	blockquote {
+		background-color: rgba(216,219,226,0.25);
+		font-size: 16px;
+		color: $dark-blue;
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
+	}
+}
+
+/* ---------- Pagination ---------- */
+#top {
+	.fullsize {
+		.template-blog {
+			.pagination {
+				a {
+					box-shadow: none;
+					border-radius: 0;
+					font-size: 14px;
+					@include transition;
+					&:hover {
+						background-color: $cta-blue;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+	.pagination {
+		a, .current {
+			box-shadow: none;
+			border-radius: 0;
+			font-size: 14px;
+		}
+		.current {
+			color: $cta-blue;
+		}
+	}
+	.main_color {
+		.pagination {
+			a {
+				@include transition;
+				&:hover {
+					background-color: $cta-blue;
+					color: $white;
+				}
 			}
 		}
 	}
@@ -188,6 +528,174 @@ $dark-gray: #494D51;
 				width: auto;
 				top: 0;
 				transform: none;
+			}
+		}
+	}
+	#top {
+		#wrap_all {
+			#header {
+				#av-burger-menu-ul {
+					display: block;
+					& > li {
+						&[class*="menu-item"] {
+							a {
+								text-transform: uppercase;
+								font-weight: bold;
+								text-align: center;
+							}
+						}
+						&[class*="current"] {
+							a {
+								color: $cta-blue;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#menu-item-search {
+		a:before {
+			font-size: 26px !important;
+		}
+	}
+	/* ---------- CTA Section ---------- */
+	#cta-section {
+		.container {
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0;
+		}
+		.template-page {
+			padding: 0;
+		}
+		.cta-box {
+			padding: 40px 7.5% !important;
+			margin-bottom: 0 !important;
+			.avia_ajax_form {
+				.button {
+					margin-left: 0 !important;
+				}
+			}
+		}
+		.flex_column {
+			&:first-child, &:last-child {
+				display: none;
+			}
+		}
+	}
+	/* ---------- Popup ---------- */
+	.responsive {
+		#top {
+			.mfp-container {
+				padding: 0;
+			}
+			#test-popup {
+				&.white-popup {
+					padding-left: 0;
+					padding-right: 0;
+				}
+				.popup-wrapper, .popup-cta {
+					padding-left: 7.5%;
+					padding-right: 7.5%;
+				}
+				.popup-wrapper {
+					.avia_image {
+						width: 175px;
+					}
+					.avia_textblock {
+						h2 {
+							font-size: 1.25em;
+						}
+					}
+				}
+				.popup-cta {
+					.avia_textblock {
+						h2 {
+							font-size: 1.75em;
+						}
+					}
+				}
+				.flex_column {
+					margin: 0;
+					margin-bottom: 20px;
+					width: 100%;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	/* ---------- Homepage Specifics ---------- */
+	.html_entry_id_431 {
+		#av_section_3 {
+			.template-page {
+				padding-bottom: 0;
+			}
+			.slide-entry {
+				&.slide-parity-even {
+					margin-bottom: 20px !important;
+				}
+			}
+		}
+		#top {
+			.avia_ajax_form {
+				.button {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	/* ---------- Footer ---------- */
+	#socket {
+		font-size: 14px;
+		 .container {
+		    padding-top: 30px;
+		    padding-bottom: 30px;
+		    display: flex;
+		    flex-flow: column wrap;
+		    margin-bottom: 15px;
+		}
+		.copyright {
+		    float: none;
+			order: 2;
+			text-align: center;
+			line-height: 1.4;
+		}
+		.sub_menu_socket {
+		    float: none;
+		    order: 1;
+		    margin: 0;
+		    margin-bottom: 10px !important;
+		}
+		.menu {
+			margin: 0;
+			text-align: center;
+			.menu-item {
+				padding: 0;
+				line-height: 1;
+				display: inline-block;
+				float: none;
+				&[class*='colored'] {
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 479px) {
+	/* ---------- Popup ---------- */
+	.responsive {
+		#top {
+			#test-popup {
+				.popup-cta {
+					.avia_ajax_form {
+						.button {
+							margin-left: 0 !important;
+						}
+					}
+				}
 			}
 		}
 	}

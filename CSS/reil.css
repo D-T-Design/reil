@@ -6,11 +6,13 @@ Author: Ventura Web Design
 Author URI: https://www.venturawebdesign.com/
 Template: enfold
 */
-/* ---------- Updated 11-13-2018 ---------- */
+/* ---------- Updated 11-15-2018 ---------- */
 /* ---------- Sitewide Typography ---------- */
 .template-page .entry-content-wrapper h1, .template-page .entry-content-wrapper h2 { text-transform: none; letter-spacing: normal; }
 
 .avia_textblock p { max-width: 65ch; position: relative; margin-left: auto; margin-right: auto; }
+
+.mejs-container * { font-family: 'freight-sans-pro', Helvetica, Arial, sans-serif; }
 
 /* ---------- Preloader ---------- */
 #top .av-siteloader { opacity: 0.75; }
@@ -19,15 +21,66 @@ Template: enfold
 .av-preloading-logo { max-width: 75px !important; height: auto; }
 
 /* ---------- Buttons ---------- */
-.avia-button { -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+.avia-button { -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; border-radius: 0 !important; }
 .avia-button:hover { opacity: 1; -webkit-filter: saturate(2); filter: saturate(2); }
 .avia-button.avia-size-large { font-size: 18px; padding: 15px 30px; font-weight: bold; text-transform: uppercase; }
+
+/* ---------- Input ---------- */
+#top .avia_ajax_form .text_input, #top .avia_ajax_form .button { border-radius: 0; border: 0; }
+#top input[type="text"] { border-radius: 0; }
 
 /* ---------- Header ---------- */
 .logo img { height: 50px; width: auto; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
 #top #header_main > .container .main_menu .av-main-nav > li > a { font-size: 14px; text-transform: uppercase; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
 #top #header_main > .container .main_menu .av-main-nav > li > a:hover { color: #0068C6; }
+#top #wrap_all .header_color .av-menu-button-colored > a .avia-menu-text { padding: 9px 18px; border-radius: 0; }
+
+#menu-item-search #searchform a[class*='view_all'] { color: #FFFFFF; font-size: 16px; background-color: #0068C6; line-height: 1; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#menu-item-search #searchform a[class*='view_all']:hover { background-color: #0068C6; -webkit-filter: saturate(2); filter: saturate(2); }
+#menu-item-search #searchform a.av_ajax_search_entry:hover .av_ajax_search_title { color: #0068C6; -webkit-filter: saturate(2); filter: saturate(2); }
+#menu-item-search #searchform .av_ajax_search_title { font-size: 18px; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#menu-item-search #searchform .av_ajax_search_image { border-radius: 0; }
+
+/* ---------- Popup ---------- */
+.white-popup { position: relative; background: #D8DBE2; padding: 30px; width: auto; max-width: 1260px; margin: 0 auto; }
+
+.popup-wrapper { background-color: #FFFFFF; padding: 50px; font-size: 18px; }
+.popup-wrapper .avia_textblock h2 { line-height: 1.3; }
+.popup-wrapper .avia_textblock ul { list-style: disc; margin-bottom: 0; margin-left: 1.5em; }
+.popup-wrapper strong { color: #0068C6; }
+.popup-wrapper .avia_image { width: 246px; max-width: 100%; height: auto; }
+.popup-wrapper .popup-last { color: #0068C6; }
+
+.popup-cta { padding: 30px 50px; }
+.popup-cta .avia_textblock p { position: static; width: 100%; max-width: 100%; margin: 0; }
+.popup-cta .avia_textblock h2 { font-size: 2.1em; }
+.popup-cta .avia_textblock .pop-up-cta { display: block; color: #0068C6; }
+.popup-cta + button.mfp-close { background-color: #494D51; color: #FFFFFF; width: 60px; height: 60px; line-height: 60px; opacity: 1; font-size: 36px; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+.popup-cta + button.mfp-close:hover { background-color: #0068C6; }
+
+#top .popup-cta .avia_ajax_form, #top .popup-cta fieldset { margin-bottom: 0; }
+#top .popup-cta .avia_ajax_form .text_input { background-color: #FFFFFF; opacity: 0.8; }
+#top .popup-cta .avia_ajax_form .text_input:hover, #top .popup-cta .avia_ajax_form .text_input:focus { opacity: 1; }
+#top .popup-cta .avia_ajax_form .button { background-color: #0068C6; border-color: #0068C6; color: #FFFFFF; }
+#top .popup-cta .avia_ajax_form .button:hover { background-color: #FFFFFF; color: #041723; }
+
+/* ---------- Breadcrumb ---------- */
+.title_container { background-color: #494D51; -webkit-box-shadow: inset 0px 5px 15px rgba(4, 23, 35, 0.5); box-shadow: inset 0px 5px 15px rgba(4, 23, 35, 0.5); background: #041723; background: -webkit-gradient(linear, left top, right top, from(#041723), to(#494D51)); background: linear-gradient(to right, #041723, #494D51); background: -webkit-gradient(linear, left top, left bottom, from(horizontal), color-stop(#041723), to(#494D51)); background: linear-gradient(horizontal, #041723, #494D51); }
+.title_container .breadcrumb { font-size: 14px; line-height: 1; color: #FFFFFF; font-weight: bold; }
+.title_container .breadcrumb a { -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; font-weight: normal; color: #FFFFFF; }
+.title_container .breadcrumb a:hover { color: #D8DBE2; text-decoration: none; }
+.title_container .breadcrumb .trail-before { display: none; }
+
+/* ---------- CTA Section ---------- */
+#top .avia_ajax_form .button { background-color: #041723; color: #D8DBE2; font-weight: bold; margin: 0; margin-left: 2% !important; border: 1px solid #041723; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#top .avia_ajax_form .button:hover { border: 1px solid #FFFFFF; color: #FFFFFF; }
+#top .avia_ajax_form .text_input { background-color: #D8DBE2; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#top .avia_ajax_form .text_input:hover, #top .avia_ajax_form .text_input:focus { background-color: #FFFFFF; color: #494D51; }
+
+/* ---------- Homepage Specifics ---------- */
+.html_entry_id_431 #av_section_2 h2, .html_entry_id_431 #av_section_2 p { text-align: center; line-height: 1.5; }
+.html_entry_id_431 #av_section_2 h2 { line-height: 1.2; }
 
 /* ---------- Projects Slider ---------- */
 #top .avia-content-slider { overflow: visible; }
@@ -53,5 +106,62 @@ Template: enfold
 #socket .menu a { text-transform: uppercase; color: #D8DBE2; letter-spacing: 2px; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; display: block; padding: 5px 10px; }
 #socket .menu a:hover { color: #0068C6; text-decoration: none; }
 
+/* ---------- Blog Page ---------- */
+#top.blog .post-title { font-size: 1.5em; color: #0068C6; }
+
+.html_modern-blog #top .post-entry .post-title { font-size: 1.5em; color: #0068C6; }
+
+.small-preview, .small-preview img { border-radius: 0; }
+
+.recentcomments a, .widget_recent_entries li a { font-family: 'freight-sans-pro', Helvetica, Arial, sans-serif; }
+
+/* ---------- Scroll Top Link ---------- */
+#scroll-top-link.avia_pop_class { opacity: 1; background-color: #0068C6; border: 1px solid #0068C6; border-radius: 0; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#scroll-top-link.avia_pop_class:hover { background-color: #FFFFFF; color: #0068C6; border-color: #041723; }
+
+/* ---------- Blockquotes ---------- */
+.main_color blockquote { background-color: rgba(216, 219, 226, 0.25); font-size: 16px; color: #041723; padding-top: 0.25em; padding-bottom: 0.25em; }
+
+/* ---------- Pagination ---------- */
+#top .fullsize .template-blog .pagination a { -webkit-box-shadow: none; box-shadow: none; border-radius: 0; font-size: 14px; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#top .fullsize .template-blog .pagination a:hover { background-color: #0068C6; color: #FFFFFF; }
+#top .pagination a, #top .pagination .current { -webkit-box-shadow: none; box-shadow: none; border-radius: 0; font-size: 14px; }
+#top .pagination .current { color: #0068C6; }
+#top .main_color .pagination a { -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+#top .main_color .pagination a:hover { background-color: #0068C6; color: #FFFFFF; }
+
 @media screen and (max-width: 767px) { /* ---------- Header ---------- */
-  .responsive .logo img { height: 40px !important; width: auto; top: 0; -webkit-transform: none; transform: none; } }
+  .responsive .logo img { height: 40px !important; width: auto; top: 0; -webkit-transform: none; transform: none; }
+  #top #wrap_all #header #av-burger-menu-ul { display: block; }
+  #top #wrap_all #header #av-burger-menu-ul > li[class*="menu-item"] a { text-transform: uppercase; font-weight: bold; text-align: center; }
+  #top #wrap_all #header #av-burger-menu-ul > li[class*="current"] a { color: #0068C6; }
+  #menu-item-search a:before { font-size: 26px !important; }
+  /* ---------- CTA Section ---------- */
+  #cta-section .container { width: 100% !important; max-width: 100% !important; margin: 0; }
+  #cta-section .template-page { padding: 0; }
+  #cta-section .cta-box { padding: 40px 7.5% !important; margin-bottom: 0 !important; }
+  #cta-section .cta-box .avia_ajax_form .button { margin-left: 0 !important; }
+  #cta-section .flex_column:first-child, #cta-section .flex_column:last-child { display: none; }
+  /* ---------- Popup ---------- */
+  .responsive #top .mfp-container { padding: 0; }
+  .responsive #top #test-popup.white-popup { padding-left: 0; padding-right: 0; }
+  .responsive #top #test-popup .popup-wrapper, .responsive #top #test-popup .popup-cta { padding-left: 7.5%; padding-right: 7.5%; }
+  .responsive #top #test-popup .popup-wrapper .avia_image { width: 175px; }
+  .responsive #top #test-popup .popup-wrapper .avia_textblock h2 { font-size: 1.25em; }
+  .responsive #top #test-popup .popup-cta .avia_textblock h2 { font-size: 1.75em; }
+  .responsive #top #test-popup .flex_column { margin: 0; margin-bottom: 20px; width: 100%; }
+  .responsive #top #test-popup .flex_column:last-child { margin-bottom: 0; }
+  /* ---------- Homepage Specifics ---------- */
+  .html_entry_id_431 #av_section_3 .template-page { padding-bottom: 0; }
+  .html_entry_id_431 #av_section_3 .slide-entry.slide-parity-even { margin-bottom: 20px !important; }
+  .html_entry_id_431 #top .avia_ajax_form .button { margin-left: 0; }
+  /* ---------- Footer ---------- */
+  #socket { font-size: 14px; }
+  #socket .container { padding-top: 30px; padding-bottom: 30px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column wrap; flex-flow: column wrap; margin-bottom: 15px; }
+  #socket .copyright { float: none; -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; text-align: center; line-height: 1.4; }
+  #socket .sub_menu_socket { float: none; -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; margin: 0; margin-bottom: 10px !important; }
+  #socket .menu { margin: 0; text-align: center; }
+  #socket .menu .menu-item { padding: 0; line-height: 1; display: inline-block; float: none; }
+  #socket .menu .menu-item[class*='colored'] { display: none; } }
+@media screen and (max-width: 479px) { /* ---------- Popup ---------- */
+  .responsive #top #test-popup .popup-cta .avia_ajax_form .button { margin-left: 0 !important; } }
