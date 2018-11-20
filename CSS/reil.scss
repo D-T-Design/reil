@@ -7,7 +7,7 @@ Author URI: https://www.venturawebdesign.com/
 Template: enfold
 */
 
-/* ---------- Updated 11-15-2018 ---------- */
+/* ---------- Updated 11-20-2018 ---------- */
 
 $cta-blue: #0068C6;
 $dark-blue: #041723;
@@ -97,6 +97,14 @@ $white: #FFFFFF;
 		padding: 15px 30px;
 		font-weight: bold;
 		text-transform: uppercase;
+	}
+}
+.menu-item-type-custom {
+	a:hover {
+		span {
+			opacity: 1;
+			filter: saturate(2);
+		}
 	}
 }
 
@@ -319,6 +327,15 @@ $white: #FFFFFF;
 			}
 		}
 	}
+	#cta-section {
+		label {
+			color: $white;
+		}
+	}
+	.av-form-error-container {
+		background-color: $light-gray;
+		margin-bottom: 0;
+	}
 }
 
 /* ---------- Homepage Specifics ---------- */
@@ -390,6 +407,40 @@ $white: #FFFFFF;
 	}
 }
 
+/* ---------- Projects Page ---------- */
+#project-examples {
+	h3 {
+		text-align: right;
+		color: $cta-blue;
+	}
+	.flex_column {
+		box-shadow: 0px 6px 12px $light-gray;
+		border: 1px solid $light-gray;
+		padding-bottom: 20px;
+	}
+	.project-example {
+		.av_textblock_section {
+			padding: 0 20px;
+			&:nth-child(2) {
+				padding: 0;
+			}
+		}
+	}
+	.project-img {
+		margin-bottom: 0 !important;
+	}
+	.project-title {
+		line-height: 1;
+		padding: 0.75em 20px;
+		@include gradient-bg($cta-blue, $dark-blue, $cta-blue, horizontal);
+		h3 {
+			text-align: left;
+			color: $white;
+			margin-bottom: 0;
+		}
+	}
+}
+
 /* ---------- Footer Socket ---------- */
 #socket {
 	font-size: 14px;
@@ -450,6 +501,30 @@ $white: #FFFFFF;
 .recentcomments a, .widget_recent_entries li a {
 	@include font-family;
 }
+.html_elegant-blog {
+	#top {
+		.post-entry {
+			.minor-meta {
+				font-weight: lighter;
+				a {
+					color: $dark-gray;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+	.avia-content-slider {
+		.av-vertical-delimiter {
+			top: 0;
+			padding-bottom: 10px;
+		}
+		.entry-title {
+			margin-top: 5px;
+		}
+	}
+}
+.html_elegant-blog #top .post-entry .minor-meta
 
 /* ---------- Scroll Top Link ---------- */
 #scroll-top-link {
@@ -680,6 +755,29 @@ $white: #FFFFFF;
 				&[class*='colored'] {
 					display: none;
 				}
+			}
+		}
+	}
+	/* ---------- Projects Page ---------- */
+	.responsive #top {
+		#project-examples {
+			.container {
+				width: 100%;
+				max-width: 100%;
+			}
+			.entry-content-wrapper > .av_textblock_section {
+				margin-bottom: 20px;
+			}
+			.project-example {
+				.av_textblock_section {
+					padding: 0 7.5%;
+					&:nth-child(2) {
+						padding: 0;
+					}
+				}
+			}
+			.project-title {
+				padding: 0.75em 7.5%;
 			}
 		}
 	}

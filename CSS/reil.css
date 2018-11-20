@@ -6,7 +6,7 @@ Author: Ventura Web Design
 Author URI: https://www.venturawebdesign.com/
 Template: enfold
 */
-/* ---------- Updated 11-15-2018 ---------- */
+/* ---------- Updated 11-20-2018 ---------- */
 /* ---------- Sitewide Typography ---------- */
 .template-page .entry-content-wrapper h1, .template-page .entry-content-wrapper h2 { text-transform: none; letter-spacing: normal; }
 
@@ -24,6 +24,8 @@ Template: enfold
 .avia-button { -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; border-radius: 0 !important; }
 .avia-button:hover { opacity: 1; -webkit-filter: saturate(2); filter: saturate(2); }
 .avia-button.avia-size-large { font-size: 18px; padding: 15px 30px; font-weight: bold; text-transform: uppercase; }
+
+.menu-item-type-custom a:hover span { opacity: 1; -webkit-filter: saturate(2); filter: saturate(2); }
 
 /* ---------- Input ---------- */
 #top .avia_ajax_form .text_input, #top .avia_ajax_form .button { border-radius: 0; border: 0; }
@@ -77,6 +79,8 @@ Template: enfold
 #top .avia_ajax_form .button:hover { border: 1px solid #FFFFFF; color: #FFFFFF; }
 #top .avia_ajax_form .text_input { background-color: #D8DBE2; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
 #top .avia_ajax_form .text_input:hover, #top .avia_ajax_form .text_input:focus { background-color: #FFFFFF; color: #494D51; }
+#top #cta-section label { color: #FFFFFF; }
+#top .av-form-error-container { background-color: #D8DBE2; margin-bottom: 0; }
 
 /* ---------- Homepage Specifics ---------- */
 .html_entry_id_431 #av_section_2 h2, .html_entry_id_431 #av_section_2 p { text-align: center; line-height: 1.5; }
@@ -95,6 +99,15 @@ Template: enfold
 #top .avia-content-slider .blog-categories a { color: #494D51; text-transform: none; }
 #top .avia-content-slider .blog-categories a:hover { text-decoration: none; }
 #top .avia-content-slider-inner { overflow: visible; }
+
+/* ---------- Projects Page ---------- */
+#project-examples h3 { text-align: right; color: #0068C6; }
+#project-examples .flex_column { -webkit-box-shadow: 0px 6px 12px #D8DBE2; box-shadow: 0px 6px 12px #D8DBE2; border: 1px solid #D8DBE2; padding-bottom: 20px; }
+#project-examples .project-example .av_textblock_section { padding: 0 20px; }
+#project-examples .project-example .av_textblock_section:nth-child(2) { padding: 0; }
+#project-examples .project-img { margin-bottom: 0 !important; }
+#project-examples .project-title { line-height: 1; padding: 0.75em 20px; background: #0068C6; background: -webkit-gradient(linear, left top, right top, from(#041723), to(#0068C6)); background: linear-gradient(to right, #041723, #0068C6); background: -webkit-gradient(linear, left top, left bottom, from(horizontal), color-stop(#041723), to(#0068C6)); background: linear-gradient(horizontal, #041723, #0068C6); }
+#project-examples .project-title h3 { text-align: left; color: #FFFFFF; margin-bottom: 0; }
 
 /* ---------- Footer Socket ---------- */
 #socket { font-size: 14px; }
@@ -115,9 +128,13 @@ Template: enfold
 
 .recentcomments a, .widget_recent_entries li a { font-family: 'freight-sans-pro', Helvetica, Arial, sans-serif; }
 
-/* ---------- Scroll Top Link ---------- */
-#scroll-top-link.avia_pop_class { opacity: 1; background-color: #0068C6; border: 1px solid #0068C6; border-radius: 0; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
-#scroll-top-link.avia_pop_class:hover { background-color: #FFFFFF; color: #0068C6; border-color: #041723; }
+.html_elegant-blog #top .post-entry .minor-meta { font-weight: lighter; }
+.html_elegant-blog #top .post-entry .minor-meta a { color: #494D51; text-transform: uppercase; letter-spacing: 1px; }
+.html_elegant-blog .avia-content-slider .av-vertical-delimiter { top: 0; padding-bottom: 10px; }
+.html_elegant-blog .avia-content-slider .entry-title { margin-top: 5px; }
+
+.html_elegant-blog #top .post-entry .minor-meta #scroll-top-link.avia_pop_class { opacity: 1; background-color: #0068C6; border: 1px solid #0068C6; border-radius: 0; -webkit-transition: all 0.05s ease-in-out; transition: all 0.05s ease-in-out; }
+.html_elegant-blog #top .post-entry .minor-meta #scroll-top-link.avia_pop_class:hover { background-color: #FFFFFF; color: #0068C6; border-color: #041723; }
 
 /* ---------- Blockquotes ---------- */
 .main_color blockquote { background-color: rgba(216, 219, 226, 0.25); font-size: 16px; color: #041723; padding-top: 0.25em; padding-bottom: 0.25em; }
@@ -162,6 +179,12 @@ Template: enfold
   #socket .sub_menu_socket { float: none; -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; margin: 0; margin-bottom: 10px !important; }
   #socket .menu { margin: 0; text-align: center; }
   #socket .menu .menu-item { padding: 0; line-height: 1; display: inline-block; float: none; }
-  #socket .menu .menu-item[class*='colored'] { display: none; } }
+  #socket .menu .menu-item[class*='colored'] { display: none; }
+  /* ---------- Projects Page ---------- */
+  .responsive #top #project-examples .container { width: 100%; max-width: 100%; }
+  .responsive #top #project-examples .entry-content-wrapper > .av_textblock_section { margin-bottom: 20px; }
+  .responsive #top #project-examples .project-example .av_textblock_section { padding: 0 7.5%; }
+  .responsive #top #project-examples .project-example .av_textblock_section:nth-child(2) { padding: 0; }
+  .responsive #top #project-examples .project-title { padding: 0.75em 7.5%; } }
 @media screen and (max-width: 479px) { /* ---------- Popup ---------- */
   .responsive #top #test-popup .popup-cta .avia_ajax_form .button { margin-left: 0 !important; } }
